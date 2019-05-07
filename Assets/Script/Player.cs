@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
@@ -42,4 +43,12 @@ public class Player : MonoBehaviour {
             portal.gameObject.SetActive(true);
         }
 	}
+
+    void OnTriggerEnter(Collider c)
+    {
+        if (c.tag == "Portal")
+        {
+            SceneManager.LoadScene("Final");
+        }
+    }
 }
